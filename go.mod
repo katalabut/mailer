@@ -1,4 +1,4 @@
-module github.com/spotbut/mailer
+module github.com/katalabut/mailer
 
 go 1.12
 

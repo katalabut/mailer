@@ -5,17 +5,17 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/spotbut/mailer/controller"
-	"github.com/spotbut/mailer/mail"
+	"github.com/katalabut/mailer/controller"
+	"github.com/katalabut/mailer/mail"
 )
 
 func init() {
 	log.SetFormatter(&log.JSONFormatter{})
 	log.SetOutput(os.Stdout)
-	log.SetLevel(log.WarnLevel)
+	log.SetLevel(log.TraceLevel)
 }
 
 func main() {
-	mail.NewClient("smtp.yandex.ru", 587, "testpromsp@yandex.ru", "evdrimazriaedhqg")
+	mail.NewClient("host", 587, "mail@local", "pass")
 	controller.InitAndServ()
 }

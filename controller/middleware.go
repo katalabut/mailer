@@ -22,7 +22,7 @@ func chainMiddleware(mw ...middleware) middleware {
 
 func withTracing(next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		log.Trace("Tracing request for ", r.RequestURI)
+		log.Trace("Request: ", r.RequestURI)
 		next.ServeHTTP(w, r)
 	}
 }
